@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navcontroller"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/cadastroFragment"
+        android:name="com.example.myapplication.Viewmodels.Users.Cadastro.CadastroFragment"
+        android:label="CadastroFragment" >
+        <action
+            android:id="@+id/action_cadastroFragment_to_loginFragment2"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.myapplication.Viewmodels.Users.Login.LoginFragment"
+        android:label="LoginFragment" >
+        <action
+            android:id="@+id/action_loginFragment_to_cadastroFragment"
+            app:destination="@id/cadastroFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_menu"
+            app:destination="@id/menu" />
+    </fragment>
+    <fragment
+        android:id="@+id/menu"
+        android:name="com.example.myapplication.Menu"
+        android:label="fragment_menu"
+        tools:layout="@layout/fragment_menu" >
+        <action
+            android:id="@+id/action_menu_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_menu_to_createAvaliacao2"
+            app:destination="@id/createAvaliacao2" />
+        <action
+            android:id="@+id/action_menu_to_avaliacoes_list"
+            app:destination="@id/avaliacoes_list" />
+        <action
+            android:id="@+id/action_menu_to_avaliacoesFb_list"
+            app:destination="@id/avaliacoesFb_list" />
+    </fragment>
+    <fragment
+        android:id="@+id/createAvaliacao2"
+        android:name="com.example.myapplication.Viewmodels.Avaliacoes.create.CreateAvaliacao"
+        android:label="CreateAvaliacao" >
+        <action
+            android:id="@+id/action_createAvaliacao2_to_menu"
+            app:destination="@id/menu" />
+    </fragment>
+    <fragment
+        android:id="@+id/avaliacoes_list"
+        android:name="com.example.myapplication.Viewmodels.Avaliacoes.list.avaliacoes_list"
+        android:label="fragment_avaliacoes_list"
+        tools:layout="@layout/fragment_avaliacoes_list" >
+        <action
+            android:id="@+id/action_avaliacoes_list_to_menu"
+            app:destination="@id/menu" />
+    </fragment>
+    <fragment
+        android:id="@+id/avaliacoesFb_list"
+        android:name="com.example.myapplication.Viewmodels.Avaliacoes.list.avaliacoesFb_list"
+        android:label="avaliacoesFb_list" >
+        <action
+            android:id="@+id/action_avaliacoesFb_list_to_menu"
+            app:destination="@id/menu" />
+    </fragment>
+</navigation>
